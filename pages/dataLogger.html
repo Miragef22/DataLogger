@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <!--
+        Desenvolvedor: Gabriel Marques Gomes de Morais 
+        Data: 02/08/2021
+        E-mail: gabriel.m.g.morais@gmail.com
+        Tel: +55 (11) 96174-5675
+    -->
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <head>
+        <!--Importando CSS bootstrap 5.0.1-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        
+        <!--Importando Java Script plugin do boostrap 5.0.1-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    
+        <!--Importando CSS desenvolvido-->
+        <link href="../css/style.css" rel="stylesheet" >
+
+        <!--Cabeçalho-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <!--titulo do menu-->
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../../index.html">Simbol</a>
+
+                <!--Botões do menu-->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="dataLogger.html">Data Logger</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </head>
+
+    <body>
+
+        <!--Formulário de cadastro-->
+        <div class="form-box">
+            <form >
+                <!--Formatando div do formulario-->
+                <div class="mb-3">
+                    <!--campos do formulario-->
+                    <label for="exampleInputText" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" id="title"> 
+                
+                    <label for="exampleInputText" class="form-label">Descrição do cliente</label>
+                    <input type="text" class="form-control" id="clientDescription"> 
+
+                    <label for="exampleInputText" class="form-label">Modelo</label>
+                    <input type="text" class="form-control" id="textModel"> 
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="status" id="radioOpen">
+                        <label class="form-check-label" for="status">Aberto</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="status" id="radioClosed">
+                        <label class="form-check-label" for="status">Encerrado</label>
+                    </div>
+
+                    <label for="exampleInputText" class="form-label">Problema localizado/descrição técnica</label>
+                    <textarea type="text" class="form-control" id="textTecnicalDescription" style="height: 60px; resize: none;" >
+                    </textarea>
+
+                    <label for="exampleInputText" class="form-label">Resolução</label>
+                    <input type="text" class="form-control" id="textResolution"> 
+
+                    <label for="exampleInputText" class="form-label">Log</label>
+                    
+                    <fieldset disabled>
+                        <textarea type="text" class="form-control" id="textLog" style="height: 150px;"></textarea>
+                    </fieldset>
+
+                    <fieldset disabled>
+                        <label for="disabledTextInput" class="form-label">Data da abertura</label>
+                        <input id="dateStamp" class="form-control" value="00">
+                    </fieldset>
+                    
+                    <!--Botoes de funcionalidade-->
+                    <div>
+                        <input class="btn btn-primary" type="button" value="Gerar" onclick="management.outputLog();">
+                        <input class="btn btn-primary" type="button" value="Copiar" onclick="management.copyData();">
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </body>
+    
+    <!--importando scripts de funcionalidades da pagina-->
+    <script src="../script/data.js"></script>
+    <script src="../script/model.js"></script>
+</html>
